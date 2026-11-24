@@ -1,9 +1,10 @@
 import { buttonVariants } from "@heroui/styles";
 import Link from "next/link";
 import { GiMatchTip } from "react-icons/gi";
+import NavLink from "./NavLink";
 
 const navLinks = [
-  { href: "/memebrs", label: "Matches" },
+  { href: "/members", label: "Matches" },
   { href: "/lists", label: "Lists" },
   { href: "/messages", label: "Messages" },
 ];
@@ -22,9 +23,11 @@ export default function NavBar() {
         <nav className="flex gap-3 my-2 uppercase text-lg text-white">
           {navLinks.map((link) => {
             return (
-              <Link key={link.href} href={link.href}>
-                {link.label}
-              </Link>
+              <NavLink
+                key={link.href}
+                href={link.href}
+                label={link.label}
+              ></NavLink>
             );
           })}
         </nav>
